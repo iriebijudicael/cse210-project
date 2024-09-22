@@ -4,17 +4,17 @@ class Program
 {
     static void Main(string[] args)
     {   
-        //Aske user to tape some data.
-        Console.WriteLine("Which Job do you do ? ");
+        //Aske user to Records some data with Variable, Input and Output.
+        Console.WriteLine("\nWhich Job do you do ? ");
         string job = Console.ReadLine();
 
-        Console.WriteLine("How much is the salary ? ");
+        Console.WriteLine("\nHow much is the salary ? ");
         int salary = Convert.ToInt32(Console.ReadLine());
 
-        Console.WriteLine("Please, next tape the currency sign ? ");
+        Console.WriteLine("\nPlease, next tape the currency sign ? ");
         char sign = Convert.ToChar(Console.ReadLine());
 
-        Console.WriteLine("How many Kilometer before to get to the workplace ? ");
+        Console.WriteLine("\nHow many Kilometer before to get to the workplace ? ");
         double kilometer = Convert.ToDouble(Console.ReadLine());
 
         Console.WriteLine($"Everyday you go about {kilometer} Km to the {job} work, For a month salary of {salary}{sign}");

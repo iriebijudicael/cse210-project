@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        //GPA requirement to move forward.
+        //GPA requirement to move forward with Conditionals if, else and else if.
         /*Console.WriteLine("What is your grade? " );
         string grade = Console.ReadLine();
 
@@ -25,7 +25,7 @@ class Program
 		
 
   
-        //Booking a travail Time.
+        //Booking a travail day with conditionals if, else, else if.
 		Console.WriteLine("Day of selling ticket: 1, 4, 7, 18, 20, 29, 30");
         Console.Write("Please pick a number from this list ");
         string date = Console.ReadLine();
