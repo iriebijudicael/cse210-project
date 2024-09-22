@@ -5,28 +5,52 @@ class Program
     static void Main(string[] args)
     {
         //GPA requirement to move forward with Conditionals if, else and else if.
-        /*Console.WriteLine("What is your grade? " );
-        string grade = Console.ReadLine();
 
-        int x = 100;
-		x = int.Parse(grade);
-        if (x>80)
+        Console.WriteLine("What is your grade percentage? ");
+        string answer = Console.ReadLine();
+
+        int gradePercent = int.Parse(answer);
+
+        string prompt = "";
+
+        if (gradePercent >= 90)
         {
-           Console.WriteLine("You have done great, good work!"); 
+            prompt = "A";
         }
-		else if (x<50)
-		{
-		    Console.WriteLine("Sorry, next time you have to do better");
-		}
-		else
-		{
-			Console.WriteLine("Great you have validated the semester!");
-		}*/
+        else if (gradePercent >= 80)
+        {
+            prompt = "B";
+        }
+        else if (gradePercent >= 70)
+        {
+            prompt = "C";
+        }
+        else if (gradePercent >= 60)
+        {
+            prompt = "D";
+        }
+        else
+        {
+            prompt = "F";
+        }
+
+        Console.WriteLine($"Your grade is: {prompt}");
+        
+        if (gradePercent >= 70)
+        {
+            Console.WriteLine("Great work, You passed!");
+        }
+        else
+        {
+            Console.WriteLine("Unfortunately, you did not pass, Better luck next time!");
+        }
+
+
 		
 
   
         //Booking a travail day with conditionals if, else, else if.
-		Console.WriteLine("Day of selling ticket: 1, 4, 7, 18, 20, 29, 30");
+		/*Console.WriteLine("Day of selling ticket: 1, 4, 7, 18, 20, 29, 30");
         Console.Write("Please pick a number from this list ");
         string date = Console.ReadLine();
         int user = int.Parse(date);
@@ -71,7 +95,7 @@ class Program
         else
         {
             Console.WriteLine("Sorry, the fly Ticket is out!");
-        }
+        }*/
     
 
     }

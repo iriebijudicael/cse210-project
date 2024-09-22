@@ -4,8 +4,22 @@ class Program
 {
     static void Main(string[] args)
     {   
+        //// Prompt the user for the full name and age
+        Console.Write("What is your first name? ");
+        string first = Console.ReadLine();
+
+        Console.Write("What is your last name? ");
+        string last = Console.ReadLine();
+
+        Console.Write("How old are you now ? ");
+        string age = Console.ReadLine();
+
+        Console.WriteLine($"Your name is {first} {last} and you are {age} years old.");
+
+
+
         //Aske user to Records some data with Variable, Input and Output.
-        Console.WriteLine("\nWhich Job do you do ? ");
+        /*Console.WriteLine("\nWhich Job do you do ? ");
         string job = Console.ReadLine();
 
         Console.WriteLine("\nHow much is the salary ? ");
@@ -17,7 +31,9 @@ class Program
         Console.WriteLine("\nHow many Kilometer before to get to the workplace ? ");
         double kilometer = Convert.ToDouble(Console.ReadLine());
 
-        Console.WriteLine($"Everyday you go about {kilometer} Km to the {job} work, For a month salary of {salary}{sign}");
+        Console.WriteLine($"Everyday you go about {kilometer} Km to the {job} work, For a month salary of {salary}{sign}");*/
+
+        
 
         //Aske user to tape some data.
        /* Console.WriteLine("What do you study at BYU? ");

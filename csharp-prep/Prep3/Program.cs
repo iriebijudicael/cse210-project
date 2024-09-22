@@ -4,8 +4,41 @@ class Program
 {
     static void Main(string[] args)
    {
+
+       //Using while loop for Student to pick any randomnumber to earn a scholarship
+	   
+	   Random random = new Random();
+       int magicNumber = random.Next(1, 101);
+
+       int guess = -1;
+
+        while (guess != magicNumber)
+        {
+			
+            Console.WriteLine("What is your guess number? ");
+			string userNumber = Console.ReadLine();
+			
+            int userGuess = int.Parse(userNumber);
+
+            if (guess > magicNumber)
+            {
+                Console.WriteLine("Too low, try again!:");
+            }
+            else if (guess < magicNumber)
+            {
+                Console.WriteLine("Too high, try again!:");
+            }
+            else 
+            {
+                Console.WriteLine("Great, you guessed it!:");
+            }
+			
+		}
+
+
+
         //Using For loop to allow multiples entries and increment each of them
-        Console.WriteLine("What is your final grade ? ");
+        /*Console.WriteLine("What is your final grade ? ");
 		
         for (i = 1, i <= 10, i=i+1)
         {
@@ -25,27 +58,8 @@ class Program
             {
                 Console.WriteLine("Great! You have validated the semester.");
             }
-        }
-
-
-
-        //Using while loop for Student to pick any randomnumber to earn a scholarship.
-       /* Console.WriteLine("BYU-idaho decided to reward his marvelous student with scholarship:");
-        int random = random.Next(1,11); 
-        while (userGuess != randomNumber)
-        {
-			
-            Console.WriteLine("Guess a numeber between 1 and 10: ");
-            userGuess = int.Parse(Consol.ReadLine());
-
-            if (userGuess < randomNumber)
-            {
-                Console.WriteLine("Too low, try again!:");
-            }
-            else if (userGuess < randomNumber);
-            {
-                Console.WriteLine("Too high, try again!:");
-            }
         }*/
+
+
     }
 }

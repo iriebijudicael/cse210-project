@@ -1,72 +1,56 @@
 using System;
 using System.Collections.Generic;
 
-
 class Program
 {
     static void Main(string[] args)
     {
-         
-        //Booking a travel day with a list of valid day
-        Console.WriteLine("\nDay of selling ticket: 1, 4, 7, 18, 20, 29, 30");
-		
-		List<int> validDays = new List<int> {1, 4, 7, 18, 20, 29};
+        //Ask user for a sList of numbers
+        List<int> numbers = new List<int>();
+        int number;
+
+        Console.WriteLine("Enter a list of numbers, type 0 when finished.");
         
-		//User have to tape a valid day
-        Console.WriteLine("Please pick a valid number from this list");
-        string date = Console.ReadLine();
-        int user = int.Parse(date);
-		
-        if (validDays.Contains(user))
-		{
-			string day = "";
-
-            if (user >= 29)
-            {
-                day = "Monday";
-            }
-            else if (user >= 20)
-            {
-                day = "Tuesday";
-            }
-            else if (user >= 18)
-            {
-                day = "Wednesday";
-            }
-            else if (user >= 7)
-            {
-                day = "Thursday";
-            }
-            else if (user >= 5)
-            {
-                day = "Friday";
-            }
-            else if (user >= 4)
-            {
-                day = "Saturday";
-            }
-            else
-            {
-                day = "Sunday";
-            }
-
-            Console.WriteLine($"Your day is: {day}");
-
-            if (user >= 5)
-            {
-                 Console.WriteLine($"{user}, is a Good day to have a ticket.");
-            }
-            else
-            {
-            Console.WriteLine("Sorry, the flight ticket is out!");
-            }
-		}
         
-        else 
+        do
         {
-            Console.WriteLine("Day selected by error. Please restart the program and choose a valid day");
+            Console.Write("Enter number: ");
+            number = int.Parse(Console.ReadLine());
+
+            if (number != 0)
+            {
+                numbers.Add(number);
+            }
+
+        } while (number != 0); 
+
+       
+        int sum = 0;
+        foreach (int num in numbers)
+        {
+            sum += num;
         }
-		
-	}
-    
+
+        
+        double grade = 0;
+        if (numbers.Count > 0) 
+        {
+            grade = (double)sum / numbers.Count;
+        }
+
+        
+        int max = int.MinValue;
+        foreach (int num in numbers)
+        {
+            if (num > max)
+            {
+                max = num;
+            }
+        }
+
+       
+        Console.WriteLine($"\nThe sum is: {sum}");
+        Console.WriteLine($"The average is: {grade}");
+        Console.WriteLine($"The largest number is: {max}");
+    }
 }
