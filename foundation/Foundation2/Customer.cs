@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-public class Customer
+/*public class Customer
 {
     private string name;
     private Address address;
@@ -19,4 +19,4 @@ public class Customer
     {
         return address.IsInUSA();
     }
-}
+}*/
