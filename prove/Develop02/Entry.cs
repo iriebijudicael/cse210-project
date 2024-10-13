@@ -1,18 +1,16 @@
 using System;
 
-
 public class Entry
 {
-    public string Prompt ( get; set )
-    public string Response ( get; set )
-    public string DateTime Date ( get; set )
-
+    public string Prompt { get; set; }
+    public string Response { get; set; }
+    public DateTime Date { get; set; }
 
     public Entry(string prompt, string response)
     {
         Prompt = prompt;
         Response = response;
-        Date = DateTime.New;
+        Date = DateTime.Now;
     }
 
     public void Display()

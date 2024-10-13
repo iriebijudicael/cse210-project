@@ -3,14 +3,13 @@ using System.Collections.Generic;
 
 class Program
 {
-
-    static List<string> prompts = new List<string>;
+    static List<string> prompts = new List<string>
     {
         "Who was the most interesting person I interacted with today?",
         "What was the best part of my day?",
         "How did I see the hand of the Lord in my life?",
         "What was the strongest emotion I felt today?",
-        "If I had one thing I could do over today, what would it be?",
+        "If I had one thing I could do over today what would it be?",
     };
 
     static Journal journal = new Journal();
@@ -29,19 +28,19 @@ class Program
 
             string userChoice = Console.ReadLine();
 
-            switch (choice)
+            switch (userChoice)     
             {
                 case "1":
                     WriteEntry();
                     break;
                 case "2":
-                    journal.DisplayJournal();
+                    journal.DisplayJournal();   
                     break;
                 case "3":
-                    saveJournal();
+                    SaveJournal();
                     break;
                 case "4":
-                    loadJournal();
+                    LoadJournal();
                     break;
                 case "5":
                     return;

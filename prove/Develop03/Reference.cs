@@ -4,37 +4,37 @@ using System;
 class Reference
 {
     // Private fields (encapsulated data)
-    private string myBook;
-    private int myChapter;
-    private int myVerse;
-    private int myEndVerse;
+    private string _book;
+    private int _chapter;
+    private int _verse;
+    private int _endVerse;
 
     // Constructor for a single verse
     public Reference(string book, int chapter, int verse)
     {
-        myBook = book;
-        myChapter = chapter;
-        myVerse = verse;
-        myEndVerse = 1; 
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
+        _endVerse = -1; 
     }
 
     public Reference(string book, int chapter, int verse, int endVerse)
     {
-        myBook = book;
-        myChapter = chapter;
-        myVerse = verse;
-        myEndVerse = endVerse;
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
+        _endVerse = endVerse;
     }
 
     public string GetDisplayText()
     {
-        if (myEndVerse == 1)
+        if (_endVerse == -1)
         {
-            return $"{myBook} {myChapter}:{myVerse}";
+            return $"{_book} {_chapter}:{_verse}";
         }
         else
         {
-            return $"{myBook} {myChapter}:{myVerse}-{myEndVerse}";
+            return $"{_book} {_chapter}:{_verse}-{_endVerse}";
         }
     }
 }

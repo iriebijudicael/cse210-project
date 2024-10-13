@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 class Scripture
 {
@@ -18,7 +19,6 @@ class Scripture
             _words.Add(new Word(wordText));
         }
     }
-
   
     public void HideRandomWords(int numberToHide)
     {
@@ -28,7 +28,7 @@ class Scripture
         while (hiddenCount < numberToHide)
         {
             int index = random.Next(_words.Count);
-            if (_words[index].IsHidden())
+            if (!_words[index].IsHidden())
             {
                 _words[index].Hide();
                 hiddenCount++;
@@ -36,12 +36,11 @@ class Scripture
         }
     }
 
-    
     public bool IsCompletelyHidden()
     {
         foreach (Word word in _words)
         {
-            if (word.IsHidden())
+            if (!word.IsHidden())
             {
                 return false;
             }
@@ -49,7 +48,6 @@ class Scripture
         return true;
     }
 
-    
     public string GetDisplayText()
     {
         string displayText = _reference.GetDisplayText() + ": ";

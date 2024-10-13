@@ -13,7 +13,7 @@ class Program
         Scripture scripture = new Scripture(myObject1, "But the Advocate, the Holy Spirit, whom the Father will send in my name, will teach you all things and will remind you of everything I have said to you.");
         //Scripture scripture = new Scripture(myObject2, "Trust in the Lord with all your heart and lean not on your own understanding in all your ways submit to him and he will make your paths straight");
 
-        
+        //Loop while To keep asking until the condition is made to break.
         while (true) 
         {
             Console.Clear();
@@ -43,5 +43,5 @@ class Program
             }
 
         }
-    }
+	}
 }

@@ -1,9 +1,38 @@
 using System;
-using system.Collections.Generic;
+
+
+/*class Journal
+{
+    private List<(string prompt, string response)> entries = new List<(string prompt, string response)>();
+
+    public void AddEntry(string prompt, string response)
+    {
+        entries.Add((prompt, response));
+    }
+
+    public void DisplayJournal()
+    {
+        foreach (var entry in entries)
+        {
+            Console.WriteLine($"Prompt: {entry.prompt}, Response: {entry.response}");
+        }
+    }
+
+    public void SaveToFile(string filename)
+    {
+        // implement saving to file
+    }
+
+    public void LoadJournalFile(string filename)
+    {
+        // implement loading from file
+    }
+}*/
+
 
 public class Journal
 {
-    private List<Entry> entries = new List<Entry>();
+    public List<Entry> entries = new List<Entry>();
 
     public void AddEntry(string prompt, string response)
     {
@@ -19,7 +48,7 @@ public class Journal
         }
     }
 
-    public void SveToFile(string filename)
+    public void SaveToFile(string filename)
     {
         using (StreamWrite Write = new StreamWrite(filename))
         {
