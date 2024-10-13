@@ -7,7 +7,7 @@ class Product
     private decimal pricePerUnit;
     private int quantity;
 
-    public Product(string name, string productId, decimal pricePerUnit, int quantity)
+    public Product(string name, string productId, int pricePerUnit, int quantity)
     {
         this.name = name;
         this.productId = productId;
