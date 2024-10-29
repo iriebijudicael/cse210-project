@@ -1,9 +1,13 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
 
-class Program
+// Program class to start GoalManager
+public class Program
 {
-    static void Main(string[] args)
+    public static void Main()
     {
-        Console.WriteLine("Hello Develop06 World!");
+        GoalManager goalManager = new GoalManager();
+        goalManager.Start();
     }
 }
