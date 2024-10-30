@@ -2,42 +2,32 @@ using System;
 
 public class ListingActivity : Activity
 {
-    private List<string> _prompts;
-    private int _count;
-
-    public ListingActivity(List<string> prompts) : base("Listing", "List as many items as you can.", 60)
+    private static readonly List<string> Prompts = new List<string>
     {
-        _prompts = prompts;
-        _count = 0;
+        "Who are people that you appreciate?",
+        "What are personal strengths of yours?",
+        "Who are people you have helped this week?",
+        "Who are some of your personal heroes?"
+    };
+
+    public ListingActivity() : base("Listing", "This activity helps you list things you are grateful for.")
+    {
     }
 
-    public override void Run ()
+    public override void Run()
     {
-        base.DisplayStartingMessage();
+        SetDuration();
+        DisplayStartingMessage();
 
-        string prompt = GetRandomPrompt();
-        Console.WriteLine("Prompt: " + prompt);
+        string prompt = Prompts[new Random().Next(Prompts.Count)];
+        Console.WriteLine($"Prompt: {prompt}");
+        ShowCountdown(5);
 
-        List<string> items = GetListFromUser();
-
-        Console.WriteLine("You listed " + items.Count + " items.");
-
-        base.DisplayEndingMessage();
-    }
-
-    private string GetRandomPrompt()
-    {
-        Random random = new Random();
-        return _prompts[random.Next(_prompts.Count)];
-    }
-
-    private List<string> GetListFromUser()
-    {
+        DateTime endTime = DateTime.Now.AddSeconds(_duration);
         List<string> items = new List<string>();
-
+        
         Console.WriteLine("Start listing items (enter 'done' to finish):");
-
-        while (true)
+        while (DateTime.Now < endTime)
         {
             string item = Console.ReadLine();
             if (item.ToLower() == "done")
@@ -45,9 +35,9 @@ public class ListingActivity : Activity
                 break;
             }
             items.Add(item);
-            _count++;
         }
 
-        return items;
+        Console.WriteLine($"You listed {items.Count} items.");
+        DisplayEndingMessage();
     }
 }

@@ -2,24 +2,25 @@ using System;
 
 public class BreathingActivity : Activity
 {
-    public BreathingActivity() : base("Breathing", "Relax by focusing on your breath.", 60)
-	{
-	
-	}
-
-    public virtual void Run()
+    public BreathingActivity() : base("Breathing", "This activity will help you relax by focusing on breathing.")
     {
-        base.DisplayStartingMessage();
+    }
 
-        for (int i = 0; i < _duration; i++)
+    public override void Run()
+    {
+        SetDuration();
+        DisplayStartingMessage();
+
+        int cycles = _duration / 6; 
+        for (int i = 0; i < cycles; i++)
         {
             Console.WriteLine("Breathe in...");
-            ShowSpinner(3);
+            ShowCountdown(3);
 
             Console.WriteLine("Breathe out...");
-            ShowSpinner(3);
+            ShowCountdown(3);
         }
 
-        base.DisplayEndingMessage();
+        DisplayEndingMessage();
     }
 }

@@ -2,39 +2,47 @@ using System;
 
 public class ReflectingActivity : Activity
 {
-    private List<string> _prompts;
-    private List<string> _questions;
-
-    public ReflectingActivity(List<string> prompts, List<string> questions) : base("Reflecting", "Reflect on a past experience.", 60)
+    private static readonly List<string> Prompts = new List<string>
     {
-        _prompts = prompts;
-        _questions = questions;
+        "Think of a time when you stood up for someone else.",
+        "Think of a time when you did something really difficult.",
+        "Think of a time when you helped someone in need.",
+        "Think of a time when you did something truly selfless."
+    };
+
+    private static readonly List<string> Questions = new List<string>
+    {
+        "Why was this experience meaningful to you?",
+        "Have you ever done anything like this before?",
+        "How did you get started?",
+        "How did you feel when it was complete?",
+        "What made this time different than other times?",
+        "What could you learn from this experience?"
+    };
+
+    public ReflectingActivity() : base("Reflection", "This activity helps you reflect on experiences of strength and resilience.")
+    {
     }
 
-    public override void Run ()
+    public override void Run()
     {
-        base.DisplayStartingMessage();
+        SetDuration();
+        DisplayStartingMessage();
 
-        string prompt = GetRandomPrompt();
-        Console.WriteLine("Prompt: " + prompt);
+        string prompt = Prompts[new Random().Next(Prompts.Count)];
+        Console.WriteLine($"Prompt: {prompt}");
+        ShowCountdown(5);
 
-        DisplayQuestions();
+        DateTime endTime = DateTime.Now.AddSeconds(_duration);
+        int questionIndex = 0;
 
-        base.DisplayEndingMessage();
-    }
-
-    private string GetRandomPrompt()
-    {
-        Random random = new Random();
-        return _prompts[random.Next(_prompts.Count)];
-    }
-
-    private void DisplayQuestions()
-    {
-        foreach (string question in _questions)
+        while (DateTime.Now < endTime)
         {
-            Console.WriteLine(question);
-            ShowSpinner(5);
+            Console.WriteLine(Questions[questionIndex]);
+            ShowSpinner(5); 
+            questionIndex = (questionIndex + 1) % Questions.Count;
         }
+
+        DisplayEndingMessage();
     }
 }
